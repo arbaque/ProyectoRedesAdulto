@@ -8,6 +8,7 @@ class post{
 	private $imagen;
 	Private $tipoPost;
 	Private $tipoImagen;
+	private $estado;
 	
 	function __construct(){
 		
@@ -69,6 +70,13 @@ class post{
 		$this->tipoImagen = $tipoImagen;
 	}
 	
+	public function getEstado(){
+		return $this->estado;
+	}
+	
+	public function setEstado($estado){
+		$this->estado = $estado;
+	}
 	
 }
 ?>
