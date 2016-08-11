@@ -1,6 +1,6 @@
 <?php
 
-require_once("colector.php");
+require_once("../Colector/colector.php");
 class demoColector
 {
  
@@ -17,11 +17,11 @@ class demoColector
  
   
  //obtenemos usuarios de una tabla con postgreSql
-public function ListarDEMO()
+public function Listarpersona()
 	{
 		try
 		{
-		    $result= $this->modelo->Listar("demo");
+		    $result= $this->modelo->Listar("persona");
                        
 			return $result;
 		}
@@ -32,11 +32,15 @@ public function ListarDEMO()
 	}
  
  
- public function InsertDEMO()
+ public function Insertpersona($ObGenero)
  {
  try
 		{
-		    $result= $this->modelo->operacion("insert into demo (id_demo, nombre) values (1,dd);");
+		     $result= $this->modelo->operacion("INSERT INTO persona (nombres, apellidos,fechaNacimiento,correo,telefono,genero) values (:nombres, :apellidos, :fechaNacimiento, :correo, :telefono, :genero)",array(":descripcion"=>$ObGenero=> $get_nombres(),":apellidos" => $ObGenero=> $get_apellidos(),":apellidos" => $ObGenero=> $get_apellidos()
+,":fechaNacimiento" => $ObGenero=> $get_fechaNacimiento()
+,":correo" => $ObGenero=> $get_correo()
+,":telefono" => $ObGenero=> $get_telefono()
+,":genero" => $ObGenero=> $get_genero()));
                        
 			return $result;
 		}
@@ -46,11 +50,18 @@ public function ListarDEMO()
 		}
  }
  
- public function UpdateDEMO()
+ public function Updatepersona($ObGenero)
  {
  try
 		{
-		    $result= $this->modelo->operacion("update demo set  where id_demo = 1");
+
+$result= $this->modelo->operacion("update persona set nombres = :nombres , apellidos =:apellidos,fechaNacimiento = :fechaNacimiento,correo = :correo,telefono = :telefono ,genero = :genero where pkPersona = :pkPersona)",array(":descripcion"=>$ObGenero=> $get_nombres(),":apellidos" => $ObGenero=> $get_apellidos(),":apellidos" => $ObGenero=> $get_apellidos()
+,":fechaNacimiento" => $ObGenero=> $get_fechaNacimiento()
+,":correo" => $ObGenero=> $get_correo()
+,":telefono" => $ObGenero=> $get_telefono()
+,":genero" => $ObGenero=> $get_genero()
+,":pkPersona" => $ObGenero=> $get_genero()));
+		 
                        
 			return $result;
 		}
@@ -60,11 +71,11 @@ public function ListarDEMO()
 		}
  }
  
- public function DeleteDEMO()
+ public function Deletepersona($ObGenero)
  {
  try
 		{
-		     $result= $this->modelo->operacion("delete from demo where id_demo = 2");
+		      $result= $this->modelo->operacion("delete from persona  where pkPersona = :pkPersona)",array(":pkPersona" => $ObGenero=> $get_genero()));
                        
 			return $result;
 		}
