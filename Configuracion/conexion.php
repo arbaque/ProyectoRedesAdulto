@@ -3,7 +3,7 @@ class conexion extends PDO
 {
  
  //nombre base de datos
- private $dbname = "Demo";
+ private $dbname = "dbRedSocialAdulto";
  //nombre servidor
  private $host = "localhost";
  //nombre usuarios base de datos

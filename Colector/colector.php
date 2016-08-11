@@ -1,6 +1,11 @@
 <?php
-require_once("conexion.php");
+require_once("../Configuracion/conexion.php");
 //require_once("demo.php");
+/*
+require('login/login.php') #works fine (main.php)
+require('../includes/session.php') #quits (login.php)
+*/
+
 
 class colector
 {
@@ -38,12 +43,12 @@ public function Listar($table)
 		}
 	}
 	
-	public function operacion($cadena, $objetoClass)
+	public function operacion($cadena, $ArrayobjetoClass)
 	{
 	    try
 	    {
-	    $stm =  $this->con->prepare($cadena)->execute($objetoClass);
-        $stm->execute($objetoClass);
+	    $stm =  $this->con->prepare($cadena)->exec($ArrayobjetoClass);
+        //$stm->execute($objetoClass);
         $count = $stm->rowCount();
         //$count = $this->con->exec($cadena);
          $this->con->close_con();
