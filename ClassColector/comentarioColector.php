@@ -14,7 +14,7 @@ class comentarioColector
 	this.modelo = new colector;
 	
 	
-	public Function Fct_ListarPost()
+	public Function Fct_ListarComentario()
 	{
 		try
 		{
@@ -27,6 +27,19 @@ class comentarioColector
 			die($e->getMessage());
 		}
 	}
+	
+	public Function Fct_ConsComentario
+	{
+		try
+		{
+			
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	
 	
 	public Function Fct_IngresoComentario($ObComentario)
 	{
