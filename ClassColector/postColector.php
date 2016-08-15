@@ -48,7 +48,6 @@ class postColector
 	}
 	
 	
-	
 	public function Fct_ActualizarPost($ObPost)
 	{
 		try
