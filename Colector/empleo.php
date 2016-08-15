@@ -10,6 +10,7 @@ class empleo
 	private $desde;
 	private $hasta;
 	private $actualmente;
+	private $estado;
 	
 	function __construct(){
 		
@@ -71,6 +72,15 @@ class empleo
 	public function setActualmente($actualmente){
 		$this ->actualmente= $actualmente;
 	}
+	
+	public function getEstado(){
+		return $this ->estado;
+	}
+	
+	public function setEstado($estado){
+		$this ->estado= $estado;
+	}
+	
 }
 
 ?>
